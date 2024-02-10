@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moshin_flutter_web/core/api/api_settings.dart';
+import 'package:moshin_flutter_web/features/about_screen/presentation/bloc/about_screen_bloc.dart';
 import 'package:moshin_flutter_web/features/main_screen/presentation/bloc/main_screen_bloc.dart';
 import 'package:moshin_flutter_web/x_container_injections/injection_container.dart';
 import 'package:moshin_flutter_web/routing.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => locator<MainScreenBloc>()),
+        BlocProvider(create: (_) => locator<AboutScreenBloc>()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

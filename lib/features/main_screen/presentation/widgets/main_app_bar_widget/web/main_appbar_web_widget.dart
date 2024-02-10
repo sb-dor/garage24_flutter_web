@@ -15,7 +15,7 @@ class MainAppBarWebWidget extends StatelessWidget {
             child: Row(
               children: [
                 const Text(
-                  "Moshin24",
+                  "Garage24",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

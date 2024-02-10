@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:moshin_flutter_web/features/main_screen/presentation/bloc/main_screen_bloc.dart';
 import 'package:moshin_flutter_web/global_features/domain/entities/auto/auto.dart';
 
@@ -94,7 +95,16 @@ class _AutoWidgetState extends State<_AutoWidget> with SingleTickerProviderState
           return Transform.translate(
             offset: _animation.value,
             child: GestureDetector(
-              onTap: () => [],
+              onTap: () => context.go(
+                context.namedLocation(
+                  'about_screen',
+                  pathParameters: {
+                    "mark" : widget.auto.markEntity?.nameUrl ?? '-',
+                    "model" : widget.auto.autoModelEntity?.nameUrl ?? '-',
+                    "id" : (widget.auto.id ?? 0).toString(),
+                  },
+                ),
+              ),
               child: MouseRegion(
                 onEnter: (v) {
                   setState(() {
@@ -124,10 +134,20 @@ class _AutoWidgetState extends State<_AutoWidget> with SingleTickerProviderState
                           ]
                         : [],
                   ),
-                  child: Center(
-                    child: Text(
-                      "${widget.auto.markEntity?.name} ${widget.auto.autoModelEntity?.name}"
-                      " | ${widget.auto.generationEntity?.name}",
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Center(
+                      child: Text(
+                        "${widget.auto.markEntity?.name} ${widget.auto.autoModelEntity?.name}"
+                        " | ${widget.auto.generationEntity?.name}",
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 1.1,
+                          fontSize: 18,
+                        ),
+                      ),
                     ),
                   ),
                 ),
