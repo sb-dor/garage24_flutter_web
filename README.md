@@ -20,3 +20,13 @@ all dependencies:
     flutter_test:
         sdk: flutter
     build_runner: ^2.4.8 # also do not forget to add this one for building project for web
+
+
+
+#  flutter build web --release
+#  flutter run --release
+
+
+hot to deploy in github pages:
+
+https://www.youtube.com/watch?v=QQaH06ULpfM
