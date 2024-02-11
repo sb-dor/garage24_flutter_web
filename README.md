@@ -30,3 +30,5 @@ all dependencies:
 hot to deploy in github pages:
 
 https://www.youtube.com/watch?v=QQaH06ULpfM
+
+https://stackoverflow.com/questions/64415471/flutter-web-on-github-pages-not-showing-content
